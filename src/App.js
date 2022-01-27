@@ -1,16 +1,15 @@
 import logo from './logo.svg';
 import rom from './Photos/rom.jpg';
-//import rom from './Photos/rom.jpg';
-//import rogers from './Photos/rogers-center.jpg';
-//import oldHall from './Photos/old-city-hall.jpg';
-//import cityHall from './Photos/new-city-hall.jpg';
-//import skyLine from './Photos/city-skyline.jpg';
-//import cnTower from './Photos/cn-tower.jpg';
+import rogers from './Photos/rogers-center.jpg';
+import oldHall from './Photos/old-city-hall.jpg';
+import cityHall from './Photos/new-city-hall.jpg';
+import skyLine from './Photos/city-skyline.jpg';
+import cnTower from './Photos/cn-tower.jpg';
 import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const images = [rom, logo, logo, logo, logo, logo];
+  const images = [rom, rogers, oldHall, cityHall, skyLine, cnTower];
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
