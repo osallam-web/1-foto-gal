@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+// Importaed the 6 images from a folder I created 'src/Photos'
 import rom from './Photos/rom.jpg';
 import rogers from './Photos/rogers-center.jpg';
 import oldHall from './Photos/old-city-hall.jpg';
@@ -9,7 +10,15 @@ import './App.css';
 import { useState } from 'react';
 
 function App() {
-  const images = [rom, rogers, oldHall, cityHall, skyLine, cnTower];
+  const images = [
+    {image: logo, desc: 'logo', title: 'logo'},
+    {skyLine : logo, desc: 'logo', title: 'logo'},
+    {cnTower : logo, desc: 'logo', title: 'logo'}
+    {rom : logo, desc: 'logo', title: 'logo'},
+    {oldHall : logo, desc: 'logo', title: 'logo'},
+    {rogers : logo, desc: 'logo', title: 'logo'}, 
+    {cityHall : logo, desc: 'logo', title: 'logo'},  
+    ];
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
@@ -22,8 +31,14 @@ function App() {
       </header>
       <section class="grid">
         {
-          images.map(image => <img src={image} alt="logo" onClick={()=>setSelectedImage(image)} />)
-        }
+          images.map(image => {
+            return
+              <div>
+              <h2>{image.title}</h2>
+              <img src={image.image} alt="logo" onClick={()=>setSelectedImage(image.image)} />
+              </div>
+              )
+        })
       </section>
       <div id='overlay' style={{visibility: selectedImage ? 'visible': 'hidden'}}>
         <h1><a class="close" onClick={ ()=>setSelectedImage(null) }>X</a></h1>
